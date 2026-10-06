@@ -4,5 +4,5 @@ import com.vd14.shipmentscaler.domain.Shipment;
 
 @FunctionalInterface
 public interface SaveInterfacePort {
-    Shipment saveShipments(Shipment shipment);
+    void saveShipments(Shipment shipment) throws Exception;
 }
