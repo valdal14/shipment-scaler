@@ -43,4 +43,22 @@ class ShipmentValidatorTest {
         // ASSERT
         assertFalse(isValid);
     }
+
+    @Test
+    void validateReturnsFalseIfTheCalculationDoNotMatch() {
+        // ARRANGE
+        Shipment shipment = new Shipment(
+                UUID.randomUUID(),
+                49.9,
+                4.5,
+                54.5,
+                ShipmentStatus.PENDING
+        );
+
+        ShipmentValidator shipmentValidator = new ShipmentValidator();
+        // ACT
+        boolean isValid = shipmentValidator.validate(shipment);
+        // ASSERT
+        assertFalse(isValid);
+    }
 }
