@@ -1,6 +1,6 @@
 package com.vd14.shipmentscaler.domain;
 
-import com.vd14.shipmentscaler.application.port.out.ShipmentValidatorInterfacePort;
+import com.vd14.shipmentscaler.application.port.in.ShipmentValidatorInterfacePort;
 
 public class ShipmentValidator implements ShipmentValidatorInterfacePort {
     @Override

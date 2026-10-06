@@ -9,5 +9,5 @@ CREATE TABLE shipments (
     status VARCHAR(10) NOT NULL
 );
 
-INSERT INTO shipments (tracking_reference, net_weight, tare_weight, gross_weight)
-VALUES ('26e259e6-4dc1-4cb7-813e-d8ae407ac868', 50.0, 4.5, 54.5, 'DRAFT')
+INSERT INTO shipments (tracking_reference, net_weight, tare_weight, gross_weight, status)
+VALUES ('26e259e6-4dc1-4cb7-813e-d8ae407ac868', 50.0, 4.5, 54.5, 'PENDING')

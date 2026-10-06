@@ -1,4 +1,4 @@
-package com.vd14.shipmentscaler.application.port.out;
+package com.vd14.shipmentscaler.application.port.in;
 
 import com.vd14.shipmentscaler.domain.Shipment;
 

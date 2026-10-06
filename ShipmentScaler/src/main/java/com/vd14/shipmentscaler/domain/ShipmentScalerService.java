@@ -3,7 +3,8 @@ package com.vd14.shipmentscaler.domain;
 import com.vd14.shipmentscaler.application.port.in.ShipmentScalerUseCaseInterface;
 import com.vd14.shipmentscaler.application.port.out.LoadInterfacePort;
 import com.vd14.shipmentscaler.application.port.out.SaveInterfacePort;
-import com.vd14.shipmentscaler.application.port.out.ShipmentValidatorInterfacePort;
+import com.vd14.shipmentscaler.application.port.in.ShipmentValidatorInterfacePort;
+import jakarta.transaction.Transactional;
 
 import java.util.Optional;
 
@@ -23,6 +24,7 @@ public class ShipmentScalerService implements ShipmentScalerUseCaseInterface {
     }
 
     @Override
+    @Transactional
     public void execute(Shipment shipment) {
         // Load the stored shipment
         Optional<Shipment> loadedShipment = loadPort.loadShipments(shipment.tracking_reference());
