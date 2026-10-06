@@ -18,4 +18,12 @@ class ShipmentValidatorTest {
         // ASSERT
         assertTrue(isValid);
     }
+
+    @Test
+    void validateReturnsFalse() {
+        Shipment shipment = new Shipment(UUID.randomUUID(), 49.9, 4.5, 54.5);
+        ShipmentValidator shipmentValidator = new ShipmentValidator();
+        boolean isValid = shipmentValidator.validate(shipment);
+        assertFalse(isValid);
+    }
 }
