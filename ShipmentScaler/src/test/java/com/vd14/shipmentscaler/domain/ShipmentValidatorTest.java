@@ -11,7 +11,14 @@ class ShipmentValidatorTest {
     @Test
     void validateSuccessfullyValidateTheShipment() {
         // ARRANGE
-        Shipment shipment = new Shipment(UUID.randomUUID(), 50.0, 4.5, 54.5);
+        Shipment shipment = new Shipment(
+                UUID.randomUUID(),
+                50.0,
+                4.5,
+                54.5,
+                ShipmentStatus.PENDING
+        );
+
         ShipmentValidator shipmentValidator = new ShipmentValidator();
         // ACT
         boolean isValid = shipmentValidator.validate(shipment);
@@ -20,10 +27,20 @@ class ShipmentValidatorTest {
     }
 
     @Test
-    void validateReturnsFalse() {
-        Shipment shipment = new Shipment(UUID.randomUUID(), 49.9, 4.5, 54.5);
+    void validateReturnsFalseIfTheStatusIsNotPENDING() {
+        // ARRANGE
+        Shipment shipment = new Shipment(
+                UUID.randomUUID(),
+                50.0,
+                4.5,
+                54.5,
+                ShipmentStatus.SHIPPED
+        );
+
         ShipmentValidator shipmentValidator = new ShipmentValidator();
+        // ACT
         boolean isValid = shipmentValidator.validate(shipment);
+        // ASSERT
         assertFalse(isValid);
     }
 }
